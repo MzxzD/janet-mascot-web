@@ -2,6 +2,8 @@
 
 Single-page static site introducing **Janet** with the operator mascot (transparent PNG). No build step, no trackers, system fonts only.
 
+**Continuity / handoff:** [docs/THREADLOOM_HANDOFF.md](docs/THREADLOOM_HANDOFF.md) — codename **THREADLOOM** (repo + Pages + pending steps).
+
 ## Preview locally
 
 ```bash
