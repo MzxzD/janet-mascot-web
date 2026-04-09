@@ -1,0 +1,9 @@
+# Cloudflare Pages — standalone repo (not Janet-Projects root).
+# Create project `janet-mascot-web` in Cloudflare dashboard if needed, then:
+#   npx wrangler pages deploy . --project-name=janet-mascot-web --commit-dirty=true
+#
+# Domain: set in Pages (e.g. janet.heyjanet.org); align og:image absolutes in index.html.
+#
+name = "janet-mascot-web"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "."
