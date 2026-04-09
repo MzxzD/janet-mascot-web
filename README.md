@@ -13,15 +13,7 @@ python3 -m http.server 8765
 
 ## Git (this folder is its own repo)
 
-This directory is **not** meant to be deployed by `git push` from `Janet-Projects/` alone. Work here, then push from **this** repo (same pattern as [what-can-janet-do](https://github.com/MzxzD/what-can-janet-do)):
-
-```bash
-cd janet-mascot-web   # path as you have it cloned
-git status
-# First time on GitHub: create empty repo, then:
-# git remote add origin https://github.com/MzxzD/janet-mascot-web.git
-# git push -u origin main
-```
+Canonical remote: **[github.com/MzxzD/janet-mascot-web](https://github.com/MzxzD/janet-mascot-web)** (`origin` → `main`). This directory is **not** deployed by `git push` from `Janet-Projects/` alone.
 
 `Janet-Projects/.gitignore` lists `janet-mascot-web/` so the umbrella repo does not duplicate-track these files.
 
@@ -29,10 +21,11 @@ git status
 
 | Target | Notes |
 |--------|--------|
-| **Cloudflare Pages** | From this directory: `npx wrangler pages deploy . --project-name=janet-mascot-web --commit-dirty=true` (see `wrangler.toml`). |
-| **Subdomain** e.g. `janet.heyjanet.org` | Point DNS to Pages; set **og:image** in `index.html` to the **absolute** URL of `assets/janet-hero-cityscape.png` (or your chosen preview asset) on that host. |
+| **Cloudflare Pages (live)** | **https://janet-mascot-web.pages.dev** — production branch `main`. First upload was via CLI; see below for Git-triggered builds. |
+| **CLI upload** | From this directory: `npx wrangler pages deploy . --project-name=janet-mascot-web --commit-dirty=true` (see `wrangler.toml`). |
+| **Git → Pages (auto)** | Cloudflare Dashboard → **Workers & Pages** → **janet-mascot-web** → **Settings** → connect **GitHub** repo `MzxzD/janet-mascot-web`, production branch **main**. (Wrangler cannot attach Git for you.) |
+| **Subdomain** e.g. `janet.heyjanet.org` | In Pages: **Custom domains**; set **og:image** in `index.html` to the **absolute** URL of your hero asset on that host. |
 | **Path** e.g. `heyjanet.org/janet/` | Upload this folder under that path; fix asset paths if your host uses a subpath (or set `<base href="…">`). |
-| **Separate repo** | This folder **is** that repo — push here for a clean Pages project. |
 
 **heyjanet.org** currently serves the [what-can-janet-do](../what-can-janet-do/) portfolio; this site is meant to complement it (landing / story / mascot), not replace it unless you decide to merge.
 
@@ -42,7 +35,7 @@ A **Singularity × JACK** run (Cursor Gather + synthesis) produced a recommended
 
 - [gather/20260409-janet-mascot-web-strategy/DECISION.md](../../gather/20260409-janet-mascot-web-strategy/DECISION.md) (mirrored: [Tools/singularity-gather-janet-web/DECISION.md](../../Tools/singularity-gather-janet-web/DECISION.md))
 
-**No DNS or deploy** until you complete the human checkbox in that document.
+**Custom domain / final checklist** — see that document; the default `*.pages.dev` site can go live before a custom hostname is attached.
 
 ## Assets
 
