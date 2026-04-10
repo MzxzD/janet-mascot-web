@@ -1,0 +1,5 @@
+# Canonical Meet Janet URL is https://heyjanet.org/janet/ (bundled in what-can-janet-do).
+# This file applies only to the standalone janet-mascot-web Pages project (*.pages.dev).
+# Do not copy into what-can-janet-do/janet/ (sync script excludes it).
+/ https://heyjanet.org/janet/ 301
+/* https://heyjanet.org/janet/:splat 301

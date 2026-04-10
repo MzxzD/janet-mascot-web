@@ -23,13 +23,14 @@ Canonical remote: **[github.com/MzxzD/janet-mascot-web](https://github.com/MzxzD
 
 | Target | Notes |
 |--------|--------|
-| **Cloudflare Pages (live)** | **https://janet-mascot-web.pages.dev** — production branch `main`. First upload was via CLI; see below for Git-triggered builds. |
+| **Canonical (public)** | **https://heyjanet.org/janet/** — ships from [what-can-janet-do](../what-can-janet-do/) (`janet/`). |
+| **Cloudflare Pages (legacy host)** | **https://janet-mascot-web.pages.dev** — `_redirects` → **301** to heyjanet.org/janet/ (redeploy this repo after changing `_redirects`). |
 | **CLI upload** | From this directory: `npx wrangler pages deploy . --project-name=janet-mascot-web --commit-dirty=true` (see `wrangler.toml`). |
 | **Git → Pages (auto)** | Cloudflare Dashboard → **Workers & Pages** → **janet-mascot-web** → **Settings** → connect **GitHub** repo `MzxzD/janet-mascot-web`, production branch **main**. (Wrangler cannot attach Git for you.) |
 | **Subdomain** e.g. `janet.heyjanet.org` | In Pages: **Custom domains**; set **og:image** in `index.html` to the **absolute** URL of your hero asset on that host. |
 | **Path** e.g. `heyjanet.org/janet/` | Upload this folder under that path; fix asset paths if your host uses a subpath (or set `<base href="…">`). |
 
-**heyjanet.org** currently serves the [what-can-janet-do](../what-can-janet-do/) portfolio; this site is meant to complement it (landing / story / mascot), not replace it unless you decide to merge.
+**heyjanet.org** serves the [what-can-janet-do](../what-can-janet-do/) portfolio at `/` and ships this site at **`https://heyjanet.org/janet/`** (contents synced into that repo’s `janet/` folder — run `what-can-janet-do/scripts/sync-janet-mascot-into-deploy.sh` after changes here, then deploy).
 
 ## Singularity decision (launch strategy)
 
